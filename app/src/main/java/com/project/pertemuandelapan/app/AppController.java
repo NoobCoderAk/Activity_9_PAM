@@ -22,7 +22,8 @@ public class AppController extends Application {
 
     public static synchronized AppController getInstance(){return (AppController) mInstance;}
     public RequestQueue getRequestQueue(){
-        if (mRequestQueue == null){
+        if (mRequestQueue == null)
+        {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());
         }
         return mRequestQueue;

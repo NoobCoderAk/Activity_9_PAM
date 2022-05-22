@@ -2,6 +2,7 @@ package com.project.pertemuandelapan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,7 +29,7 @@ public class TambahTeman extends AppCompatActivity {
     String nm,tlp;
     int success;
 
-    private static String url_insert = "http://10.0.2.2/umyTI/tambahtm.php";
+    private static String url_insert = "http://10.0.2.2:8080/umyTI/tambahtm.php";
     private static final String TAG = TambahTeman.class.getSimpleName();
     private static final String TAG_SUCCES = "success";
     @Override
@@ -43,6 +44,8 @@ public class TambahTeman extends AppCompatActivity {
         simpanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
                 SimpanData();
             }
         });
